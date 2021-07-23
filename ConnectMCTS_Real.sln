@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConnectMCTS_Real", "ConnectMCTS_Real.vcxproj", "{C70D0B0A-8B70-4409-BF5C-18F50A2548A2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CA51B7FE-72B1-4F36-B89F-A0266B3E8C5C}"
+	ProjectSection(SolutionItems) = preProject
+		changelog.md = changelog.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
