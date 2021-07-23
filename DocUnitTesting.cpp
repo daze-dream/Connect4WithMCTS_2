@@ -9,6 +9,18 @@ TEST_CASE("Testing doctest")
 TEST_CASE("Checking piece placement")
 {
 	GameBoard c4(6, 7);
+	SUBCASE("Checking valid input")
+	{
+		CHECK(c4.isValidColumn('1') == true);
+		CHECK(c4.isValidColumn('7') == true);
+	}
+	SUBCASE("Checking invalid input")
+	{
+		CHECK(c4.isValidColumn('a') == false);
+		CHECK(c4.isValidColumn('8') == false);
+		CHECK(c4.isValidColumn('0') == false);
+		CHECK(c4.isValidColumn('cat') == false);
+	}
 	SUBCASE("Checking a valid placement")
 	{
 		int pos = 1;
@@ -23,8 +35,43 @@ TEST_CASE("Checking piece placement")
 		{
 			c4.placePiece(pos - 1);
 		}
-		c4.displayBoard();
+		//c4.displayBoard();
 		CHECK(c4.doMoveAndChangePlayer(pos) == false);
 		CHECK(c4.getPlayerID() == 1);
 	}
+
 }
+
+TEST_CASE("Checking victory: 4 in a row")
+{
+	GameBoard c4(6, 7);
+
+	SUBCASE("Checking straight line and board terminal status")
+	{
+		int pos = 1;
+		//set up the win condition, 3 in a row
+		for (int i = 0; i <= 2; i++)
+		{
+			c4.placePiece(pos - 1);
+		}
+		c4.displayBoard();
+		CHECK(c4.checkWinAtPos(6-1, 0) == false);
+		c4.doMoveAndChangePlayer(pos);
+		CHECK(c4.checkWinAtPos(6 - 1, 0) == true);
+		CHECK(c4.getIfGameIsOver() == true);
+
+	}
+	SUBCASE("Checking a diagonal. Terminal can't be checked but would be true")
+	{
+		int pos = 1;
+		for (int i = 0; i <= 3; i++)
+		{
+			c4.placePieceRaw(5 - i , i, 1);
+		}
+		c4.displayBoard();
+		CHECK(c4.checkWinAtPos(3 - 1, 4 - 1) == true);
+		//CHECK(c4.getIfGameIsOver() == true);
+	}
+
+}
+
