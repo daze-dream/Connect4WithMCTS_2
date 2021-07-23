@@ -52,6 +52,9 @@ bool GameBoard::doMoveAndChangePlayer(int pos)
 		terminal = checkWinAtPos(result.first, indexPos);
 		switchActivePlayer();
 		moves++;
+		//check for draws
+		if (moves >= 42)
+			draw = true;
 		return true;
 	}
 	else
@@ -162,5 +165,9 @@ void GameBoard::startGame()
 	if (terminal && !draw)
 	{
 		cout << "Player " << getOpponentID() << " won in " << moves << " moves!" << endl;
+	}
+	else
+	{
+		cout << "42 moves made and no winner. It's a draw!" << endl;
 	}
 }
