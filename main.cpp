@@ -8,15 +8,18 @@
 #include "doctest.h"
 
 using std::cout;
+using std::cin;
+using std::endl;
 
 int main()
 {
 	doctest::Context context;
 	int result = context.run();
-	if (context.shouldExit()) // important - query flags (and --exit) rely on the user doing this
-		return result;          // propagate the result of the tests
-	//GameBoard c4(6, 7);
-	//c4.startGame();
+	//if (context.shouldExit()) // important - query flags (and --exit) rely on the user doing this
+		//return result;          // propagate the result of the tests
+	GameBoard c4(6, 7);
+	c4.startGame();
+	cout << endl;
 	system("pause");
 	return result;
 }
