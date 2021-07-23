@@ -43,6 +43,7 @@ void GameBoard::displayBoard()
 
 bool GameBoard::doMoveAndChangePlayer(int pos)
 {
+	//TODO: maybe break out the check win, draw check, and switch player into the startgame function for clarity.
 	//means the index in the vector, as opposed to the real column value
 	int indexPos = pos - 1;
 	pair<int, bool> result = placePiece(indexPos);
