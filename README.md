@@ -4,6 +4,7 @@ Another attempt at making Connect 4 with an AI using Monte-Carlo Trees
 - Piece placement and error checking
 - Player switching
 - Display board
-# TO DO
 - Win check
+# TO DO
 - The actual AI
+- Break out some functionality from functions to make it more readable and modular
