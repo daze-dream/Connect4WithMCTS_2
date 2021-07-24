@@ -4,7 +4,7 @@
 #include <vector>
 
 using namespace std;
-
+//Base game board class for connect 4.
 class GameBoard
 {
 public:
@@ -16,14 +16,15 @@ public:
 	bool getIfGameIsDraw() { return draw; };
 	bool getIfGameIsOverAndDraw() { return (terminal && draw); };
 	auto getBoard() { return this->board; };
+	// to check if the input to the stream is a number, and within bounds
 	bool isValidColumn(char pos);
 	//display board to console
 	void displayBoard();
 	// master game manager to be called from main.
 	void startGame();
-
 	//these should be private later
 
+	// to quickly change board active player.
 	void switchActivePlayer() { playerID = 3 - playerID; };
 	/// <summary>
 	/// Currently checks validity, places a piece, checks win condition
@@ -39,9 +40,23 @@ public:
 	pair<int, bool> placePiece(int pos);
 	// for testing purposes, places a value at any part of th 2D array.
 	void placePieceRaw(int row, int column, int id);
+	/// <summary>
+	/// sub function to check if there are 4 in a row in a linear direction. Parameters determine the direction: up, down, backwards, etc.
+	/// </summary>
+	/// <param name="r">: row to check</param>
+	/// <param name="c">: the column to check</param>
+	/// <param name="stepX">: steps in the "x" to take</param>
+	/// <param name="stepY">: steps in the "y" to take </param>
+	/// <returns>bool if there are 4 in a row or not</returns>
 	bool isLinearMatch(int r, int c, int stepX, int stepY);
+	/// <summary>
+	/// To check for a win at the given position. For now, called in doMoveAndChangePlayer().
+	/// </summary>
+	/// <param name="r">: the row to check</param>
+	/// <param name="c">: the column to check</param>
+	/// <returns>bool if there are 4 in a row or not</returns>
 	bool checkWinAtPos(int r, int c);
-private:
+protected:
 	//maxmium moves in a game 
 	const int maxMoves = 42;
 	//by default, constructs regular connect 4.
@@ -54,7 +69,7 @@ private:
 	bool terminal = false;
 	// to track how many moves have been made
 	int moves = 0;
-	// checking to see if there is a win	
+	
 
 	string tab = "                         ";
 
