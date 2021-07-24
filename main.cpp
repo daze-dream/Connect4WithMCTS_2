@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include "GameBoard.h"
+#include "GameBoardMCTS.h"
 #include "doctest.h"
 
 using std::cout;
@@ -17,7 +18,7 @@ int main()
 	int result = context.run();
 	//if (context.shouldExit()) // important - query flags (and --exit) rely on the user doing this
 		//return result;          // propagate the result of the tests
-	GameBoard c4(6, 7);
+	GameBoardMCTS c4(6, 7);
 	c4.startGame();
 	cout << endl;
 	system("pause");
