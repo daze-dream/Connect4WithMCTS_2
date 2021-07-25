@@ -4,6 +4,7 @@ Another attempt at making Connect 4 with an AI using Monte-Carlo Trees.
 This is also a small project to get me back into programming. Goals are to
 to learn about smart pointers, refresher on the testing methods taught in university,
 and proper architecture practices and SOLID for OOP.
+
 Using DocTest for automatic testing
 # WORKING
 - Piece placement and error checking
