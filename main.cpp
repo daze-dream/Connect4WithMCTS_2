@@ -18,8 +18,8 @@ int main()
 	int result = context.run();
 	//if (context.shouldExit()) // important - query flags (and --exit) rely on the user doing this
 		//return result;          // propagate the result of the tests
-	GameBoardMCTS c4(6, 7);
-	c4.startGame();
+	//GameBoardMCTS c4(6, 7);
+	//c4.startGame();
 	cout << endl;
 	system("pause");
 	return result;
