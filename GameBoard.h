@@ -8,6 +8,7 @@ using namespace std;
 class GameBoard
 {
 public:
+	GameBoard();
 	GameBoard(int r, int c);
 	~GameBoard();
 	int getPlayerID() { return this->playerID; };
@@ -58,7 +59,7 @@ public:
 	bool checkWinAtPos(int r, int c);
 protected:
 	//maxmium moves in a game 
-	const int maxMoves = 42;
+	int maxMoves = 42;
 	//by default, constructs regular connect 4.
 	int row = 6, column = 7;
 	// board representation: 6*7

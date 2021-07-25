@@ -1,5 +1,9 @@
 #include "GameBoard.h"
 
+GameBoard::GameBoard()
+{
+}
+
 GameBoard::GameBoard(int r, int c)
 {
 	row = r;
