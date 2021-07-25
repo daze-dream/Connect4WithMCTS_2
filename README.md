@@ -1,5 +1,7 @@
 # Connect 4 With Monte Carlo Tree Search AI
-Another attempt at making Connect 4 with an AI using Monte-Carlo Trees
+Another attempt at making Connect 4 with an AI using Monte-Carlo Trees.
+This is also a small project to get me back into programming, and to learn about smart pointers. This is also a refresher on the testing methods taught in university.
+Using DocTest for automatic testing
 # WORKING
 - Piece placement and error checking
 - Player switching
