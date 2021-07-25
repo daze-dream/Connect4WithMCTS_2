@@ -142,12 +142,16 @@
     <ClCompile Include="DocUnitTesting.cpp" />
     <ClCompile Include="GameBoard.cpp" />
     <ClCompile Include="GameBoardMCTS.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Node.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doctest.h" />
     <ClInclude Include="GameBoard.h" />
     <ClInclude Include="GameBoardMCTS.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="Node.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
