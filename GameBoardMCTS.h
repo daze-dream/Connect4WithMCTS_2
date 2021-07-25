@@ -9,5 +9,6 @@ public:
     // returns possible moves, aka columns that aren't filled up
     vector<int> possibleMoves();
 
+
 };
 
