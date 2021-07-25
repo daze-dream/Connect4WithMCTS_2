@@ -1,5 +1,7 @@
 #include "doctest.h"
 #include "GameBoard.h"
+#include "GameBoardMCTS.h"
+#include "GameState.h"
 
 TEST_CASE("Testing doctest")
 {
@@ -75,3 +77,32 @@ TEST_CASE("Checking victory: 4 in a row")
 
 }
 
+TEST_CASE("Checking GameState Utilities")
+{
+	GameBoardMCTS c4(6, 7);
+	c4.doMoveAndChangePlayer(1);
+	SUBCASE("Getting possible moves on turn 2 should give 7")
+	{
+		GameState newState(c4);
+		newState.fillUpPossibleStates();
+		CHECK(newState.getPossibleStates().size() == 7);
+	}
+	SUBCASE("A filled column should mean only 6 valid states")
+	{
+		for (int i = 0; i < 6; i++)
+		{
+			c4.placePiece(1-1);
+		}
+		GameState newState(c4);
+		newState.fillUpPossibleStates();
+		CHECK(newState.getPossibleStates().size() == 6);
+
+	}
+	SUBCASE("Testing out the fillAndReturn for states")
+	{
+		GameState newState(c4);
+		CHECK(newState.fillThenReturnPossibleStates().size() == 7);
+
+	}
+
+}
