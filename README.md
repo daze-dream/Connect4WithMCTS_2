@@ -5,6 +5,13 @@ Another attempt at making Connect 4 with an AI using Monte-Carlo Trees
 - Player switching
 - Display board
 - Win check
+- AI functions
+	- gets possible states / plays from current position
 # TO DO
-- The actual AI
+- AI functions
+	- selection
+	- expansion
+	- playout
+	- backpropagation
+- Node and Tree classes
 - Break out some functionality from functions to make it more readable and modular
