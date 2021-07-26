@@ -7,7 +7,8 @@
 class GameState
 {
 public: 
-	//constructor that takes a gameboard. default constructor taken care of in base class
+	GameState();
+	//constructor that takes a gameboard. default constructor for GameBoardMCTS taken care of in base class
 	GameState(GameBoardMCTS incBoard);
 	void setBoard(GameBoardMCTS incBoard) { stateBoard = incBoard; };
 	auto getBoard() { return stateBoard; };
@@ -21,10 +22,6 @@ public:
 	void fillUpPossibleStates();
 	// fills up and then returns the possibleStates vector.
 	vector<GameState> fillThenReturnPossibleStates();
-
-
-
-
 	~GameState();
 private:
 	GameBoardMCTS stateBoard;

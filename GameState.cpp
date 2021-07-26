@@ -1,5 +1,10 @@
 #include "GameState.h"
 
+GameState::GameState()
+{
+
+}
+
 GameState::GameState(GameBoardMCTS incBoard)
 {
 	this->stateBoard = incBoard;
