@@ -104,5 +104,4 @@ TEST_CASE("Checking GameState Utilities")
 		CHECK(newState.fillThenReturnPossibleStates().size() == 7);
 
 	}
-
 }
