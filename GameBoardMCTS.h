@@ -5,6 +5,7 @@ class GameBoardMCTS :
     public GameBoard
 {
 public:
+    GameBoardMCTS() : GameBoard() {};
     GameBoardMCTS(int r, int c) : GameBoard(r, c) {};
     // returns possible moves, aka columns that aren't filled up
     vector<int> possibleMoves();
