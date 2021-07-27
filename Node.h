@@ -2,6 +2,7 @@
 #include "GameState.h"
 #include <memory>
 #include <vector>
+#include <random>
 
 using std::unique_ptr;
 using std::shared_ptr;
@@ -22,8 +23,9 @@ public:
 	void setState(GameState gs) { currState = gs; };
 	void setChildren(vector<shared_ptr<Node>> incChildren) { children = incChildren; };
 	void setParent(shared_ptr<Node> incParent) { parent = incParent; };
-
-
+	shared_ptr<Node> selectRandomChild();
+	shared_ptr<Node> selectMaxChild();
+	void addChild(shared_ptr<Node> incChild) { children.push_back(incChild); };
 
 
 private:
