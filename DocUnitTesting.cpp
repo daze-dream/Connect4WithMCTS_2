@@ -2,6 +2,8 @@
 #include "GameBoard.h"
 #include "GameBoardMCTS.h"
 #include "GameState.h"
+#include "Node.h"
+#include "Tree.h"
 
 TEST_CASE("Testing doctest")
 {
